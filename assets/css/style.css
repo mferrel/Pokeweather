@@ -6,3 +6,8 @@
 .typeCard {
     float: left;
 }
+
+#typeBox {
+    margin: auto;
+    width: 80%;
+}
