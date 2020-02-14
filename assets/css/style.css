@@ -11,3 +11,8 @@
     display: flex;
     justify-content: space-between;
 }
+
+.pokeSprite {
+    height: 200px;
+    width: 200px;
+}
