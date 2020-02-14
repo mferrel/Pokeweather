@@ -33,7 +33,29 @@
                     <!-- Second section -->
                     <div class="col-12">
 
+                        <form>
+                            <div class="form-group">
+                                <label for="boostedTest">Boosted Type test</label>
+                                <select class="form-control" id="boostedTest">
+                                    <option>Clear</option>
+                                    <option>Cloudy</option>
+                                    <option>Fog</option>
+                                    <option>Partly cloudy</option>
+                                    <option>Rain</option>
+                                    <option>Snow</option>
+                                    <option>Sunny</option>
+                                    <option>Wind</option>
+                                </select>
+                            </div>
+                        </form>
+                        
+                        <button type="button" class="btn btn-primary test"></button>
+                      
+                      <div id="typeBox"></div>
+
                     </div>
+
+                    
 
                 </div>
 
@@ -43,8 +65,10 @@
 
                 <div class="row">
 
-                    <!-- Third section -->
+                    <!-- Coordinates Section -->
+                    
                     <div class="col-12">
+
                         <p>Click the button to get your coordinates.</p>
 
                         <button onclick="getLocation()">Try It</button>
@@ -68,6 +92,10 @@
                         }
                             </script>
                         
+
+
+                    </div>
+
 
                 </div>
 
