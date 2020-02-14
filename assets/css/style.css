@@ -1,0 +1,13 @@
+.typeSymbol {
+    height: 100px;
+    width: 100px;
+}
+
+.typeCard {
+    float: left;
+}
+
+#typeBox {
+    display: flex;
+    justify-content: space-between;
+}
