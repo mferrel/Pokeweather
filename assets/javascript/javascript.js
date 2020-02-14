@@ -1,13 +1,34 @@
-// Ben's api key for geocodio AKA the only free(ish) one I've found.
-// from this page https://www.geocod.io/docs/#reverse-geocoding
 
-// f1c3e0c3b50f40545177b50ce5351270340efb4
-//this is the reverse geocoding api
-var queryURL = "https://api.geocod.io/v1.4/reverse?q=38.9002898,-76.9990361&api_key=f1c3e0c3b50f40545177b50ce5351270340efb4";
 
+
+
+
+//pasted over from html file
+
+ var x = document.getElementById("geolocation");
+                        
+ function getLocation() {
+   if (navigator.geolocation) {
+     navigator.geolocation.getCurrentPosition(showPosition);
+   } else { 
+     x.innerHTML = "Geolocation is not supported by this browser.";
+   }
+ }
+ 
+ function showPosition(position) {
+   x.innerHTML = "Latitude: " + position.coords.latitude + 
+   "<br>Longitude: " + position.coords.longitude;
+ }
+ let latCoordinate = position.coords.latitude;
+ let lonCoordinate = position.coords.longitude; 
+     
+
+
+
+//getting our coordinates
 if (navigator.geolocation) {
   //true
-alert ('let\'s')
+alert ('let\'s find out where you want to do the hokey Poke?')
 } else {
   //false
 alert('geolocation not available?! What browser is this?');
@@ -15,4 +36,17 @@ alert('geolocation not available?! What browser is this?');
 }
 
 
+var queryURL = "https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=" + latCoordinate + "&lon=" + lonCoordinate; 
 
+$.ajax({
+    url: queryURL,
+    method: "GET"
+  }).then(function(response) {
+    console.log(response);
+  console.log(response.address.city);
+  });
+
+
+
+
+  

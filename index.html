@@ -10,7 +10,7 @@
 </head>
 
 <body>
-
+    <p id="instructions">Welcome to Poke Weather App, a website where we are searching </p>
     <div id="bodyWrapper">
 
             <div class="container">
@@ -34,7 +34,7 @@
                     <div class="col-12">
 
                     </div>
-
+    
                 </div>
 
             </div>
@@ -47,28 +47,11 @@
                     <div class="col-12">
                         <p>Click the button to get your coordinates.</p>
 
-                        <button onclick="getLocation()">Try It</button>
+                        <button onclick="getLocation()">Click Here</button>
                         
                         <p id="geolocation"></p>
                         
-                        <script>
-                        var x = document.getElementById("geolocation");
-                        
-                        function getLocation() {
-                          if (navigator.geolocation) {
-                            navigator.geolocation.getCurrentPosition(showPosition);
-                          } else { 
-                            x.innerHTML = "Geolocation is not supported by this browser.";
-                          }
-                        }
-                        
-                        function showPosition(position) {
-                          x.innerHTML = "Latitude: " + position.coords.latitude + 
-                          "<br>Longitude: " + position.coords.longitude;
-                        }
-                            </script>
-                        
-
+                    
                 </div>
 
             </div>
