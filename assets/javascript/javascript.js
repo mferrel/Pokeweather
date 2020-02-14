@@ -23,6 +23,7 @@ $.ajax(settingsGameWeather).done(function (response) {
       });
     console.log(gameWeatherArray);
     $(".test").on("click", function() {
+        $("#typeBox").empty();
         var weather = $("#boostedTest option:selected").text();
         console.log(weather);
 
