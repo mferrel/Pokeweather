@@ -6,70 +6,84 @@
     <Title>The PokeWeather API</Title>
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
     <p id="instructions">Welcome to Poke Weather App, a website where we are searching </p>
     <div id="bodyWrapper">
 
-            <div class="container">
+        <div class="container">
 
-                <div class="row">
+            <div class="row">
 
-                    <!-- First section -->
-                    <div class="col-12">
-
-                    </div>
+                <!-- First section -->
+                <div class="col-12">
 
                 </div>
 
             </div>
 
-            <div class="container">
+        </div>
 
-                <div class="row">
+        <div class="container">
 
-                    <!-- Weather Form -->
-                    <div class="col-12">
+                    
+            <div class="row">
 
-                        <form>
-                            <div class="form-group">
-                                <label for="boostedTest">Boosted Type test</label>
-                                <select class="form-control" id="boostedTest">
-                                    <option>Clear</option>
-                                    <option>Cloudy</option>
-                                    <option>Fog</option>
-                                    <option>Partly cloudy</option>
-                                    <option>Rain</option>
-                                    <option>Snow</option>
-                                    <option>Sunny</option>
-                                    <option>Wind</option>
-                                </select>
-                            </div>
-                        </form>
-                        
-                        <button type="button" class="btn btn-primary test"></button>
-                      
-                      <div id="typeBox"></div>
-
+                <!-- Second section -->
+               
+                <div class="col-12">
+                    <div class="card bg-dark text-white"  style= "max-width: 28rem; max-height: 22rem;">
+                        <img class="card-img" src="" alt="Card image" id="weathercard">
+                        <div class="card-img-overlay">
+                            <h5 class="card-title">Current Weather</h5>
+                            <p class="card-text" id="currentweathercondition"></p>
+                                <!-- DO WE WANT THIS FEATURE? -->
+                            <p class="card-text" id="weathercardtext"></p>
+                        </div>
                     </div>
+
+        
 
                     
 
                 </div>
 
-            </div>
+                <div class="container">
 
-            <div class="container">
+                    <div class="row">
 
-                <div class="row">
+                        <!-- Third section -->
+                        <div class="col-12">
 
-<<<<<<< HEAD
+                            <form>
+                                <div class="form-group">
+                                    <label for="boostedTest">Boosted Type test</label>
+                                    <select class="form-control" id="boostedTest">
+                                        <option>Clear</option>
+                                        <option>Cloudy</option>
+                                        <option>Fog</option>
+                                        <option>Partly cloudy</option>
+                                        <option>Rain</option>
+                                        <option>Snow</option>
+                                        <option>Sunny</option>
+                                        <option>Wind</option>
+                                    </select>
+                                </div>
+                            </form>
+                            
+                            <button type="button" class="btn btn-primary test"></button>
+                          
+                          <div id="typeBox"></div>
+
+
                     <!-- Boosted Types Display -->
-=======
+
+                        </div>
+
                     <!-- Coordinates Section -->
->>>>>>> 48a0868f2c31e814479e84066fa7f92d4479df8a
+
                     
                     <div class="col-12">
 
@@ -147,12 +161,12 @@
 
 
 
+            <!-- Script Reference -->
 
-<!-- Script Reference -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-<script src="assets/javascript/javascript.js"></script>
+            <script src="assets/javascript/javascript.js"></script>
 
 </body>
+
 </html>
