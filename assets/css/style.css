@@ -1,0 +1,25 @@
+.footer {
+    color: white;
+    position: fixed; 
+    background: red;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 50px;
+    text-align: center;
+}
+
+.typeSymbol {
+    height: 100px;
+    width: 100px;
+}
+
+.typeCard {
+    float: left;
+}
+
+#typeBox {
+    display: flex;
+    justify-content: space-between;
+
+}

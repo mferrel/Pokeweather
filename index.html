@@ -10,7 +10,7 @@
 </head>
 
 <body>
-
+    <p id="instructions">Welcome to Poke Weather App, a website where we are searching </p>
     <div id="bodyWrapper">
 
         <div class="container">
@@ -44,7 +44,29 @@
                             <p class="card-text" id="weathercardtext"></p>
                         </div>
 
+                        <form>
+                            <div class="form-group">
+                                <label for="boostedTest">Boosted Type test</label>
+                                <select class="form-control" id="boostedTest">
+                                    <option>Clear</option>
+                                    <option>Cloudy</option>
+                                    <option>Fog</option>
+                                    <option>Partly cloudy</option>
+                                    <option>Rain</option>
+                                    <option>Snow</option>
+                                    <option>Sunny</option>
+                                    <option>Wind</option>
+                                </select>
+                            </div>
+                        </form>
+                        
+                        <button type="button" class="btn btn-primary test"></button>
+                      
+                      <div id="typeBox"></div>
+
                     </div>
+
+                    
 
                 </div>
 
@@ -56,8 +78,31 @@
                         <div class="col-12">
 
                         </div>
+                    <!-- Coordinates Section -->
+                    
+                    <div class="col-12">
+
+                        <p>Click here to fetch your location!</p>
+
+                        <button onclick="getLocation()">Click Here</button>
+                        
+                        <p id="geolocation"></p>
+                    
+                        <form>
+                            <div class="form-group">
+                                <label type="manualZip">Boosted Type test</label>
+                                <input class="form-control" id="manualZip" placeholder="Enter your Postal Code">
+                               
+
+
+
+                            </div>
+                            <button type="submit" class="btn btn-primary" id="manualZipButton">Submit</button>
+                        </form>
+
 
                     </div>
+
 
                 </div>
 
@@ -65,7 +110,8 @@
 
 
 
-
+    <div class="footer"><p>
+        Project Made by Vince, Marena, and Ben</p></div>
 
 
 
