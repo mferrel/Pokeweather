@@ -1,3 +1,62 @@
+var latCoordinate;  //call to try to solve scope issue
+var lonCoordinate;
+var userZip
+
+if (navigator.geolocation) {
+  //true
+alert ('let\'s find out more about weather and Pokemon?')
+} else {
+  //false
+alert('geolocation not available?! What browser is this?');
+  // prompt for city?
+}
+
+
+var x = document.getElementById("geolocation");
+                        
+        function getLocation() {
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+          } else { 
+            x.innerHTML = "Geolocation is not supported by this browser.";
+          }
+        }
+        
+        function showPosition(position) {
+          x.innerHTML = "Latitude: " + position.coords.latitude + 
+          "<br>Longitude: " + position.coords.longitude;
+        
+          let latCoordinate = position.coords.latitude
+          let lonCoordinate = position.coords.longitude
+       
+          var queryURL = "https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=" + latCoordinate.toFixed(5) + "&lon=" + lonCoordinate.toFixed(5); 
+            $.ajax({
+              url: queryURL,
+              method: "GET"
+            }).then(function(response) {
+              console.log(response);
+
+              userZip = response.address.postcode;
+              console.log(userZip)
+
+            console.log(response.address.city); //successfully shows city
+            });
+
+            
+          }
+
+          $("#manualZipButton").on("click", function(event){
+            event.preventDefault();
+            userZip = $("#manualZip").val().trim();
+            console.log(userZip)
+          })
+    
+               
+
+
+
+
+
 var settings = {
 	"async": true,
 	"crossDomain": true,
@@ -32,5 +91,4 @@ $.ajax(settings).done(function (response) {
         }
     })
 });
-
 
