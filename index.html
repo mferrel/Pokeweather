@@ -28,12 +28,11 @@
 
         <div class="container">
 
+                    
             <div class="row">
 
                 <!-- Second section -->
-                <div class="col-12">
-
-                </div>
+               
                 <div class="col-12">
                     <div class="card bg-dark text-white"  style= "max-width: 28rem; max-height: 22rem;">
                         <img class="card-img" src="" alt="Card image" id="weathercard">
@@ -43,28 +42,9 @@
                                 <!-- DO WE WANT THIS FEATURE? -->
                             <p class="card-text" id="weathercardtext"></p>
                         </div>
-
-                        <form>
-                            <div class="form-group">
-                                <label for="boostedTest">Boosted Type test</label>
-                                <select class="form-control" id="boostedTest">
-                                    <option>Clear</option>
-                                    <option>Cloudy</option>
-                                    <option>Fog</option>
-                                    <option>Partly cloudy</option>
-                                    <option>Rain</option>
-                                    <option>Snow</option>
-                                    <option>Sunny</option>
-                                    <option>Wind</option>
-                                </select>
-                            </div>
-                        </form>
-                        
-                        <button type="button" class="btn btn-primary test"></button>
-                      
-                      <div id="typeBox"></div>
-
                     </div>
+
+        
 
                     
 
@@ -77,8 +57,33 @@
                         <!-- Third section -->
                         <div class="col-12">
 
+                            <form>
+                                <div class="form-group">
+                                    <label for="boostedTest">Boosted Type test</label>
+                                    <select class="form-control" id="boostedTest">
+                                        <option>Clear</option>
+                                        <option>Cloudy</option>
+                                        <option>Fog</option>
+                                        <option>Partly cloudy</option>
+                                        <option>Rain</option>
+                                        <option>Snow</option>
+                                        <option>Sunny</option>
+                                        <option>Wind</option>
+                                    </select>
+                                </div>
+                            </form>
+                            
+                            <button type="button" class="btn btn-primary test"></button>
+                          
+                          <div id="typeBox"></div>
+
+
+                    <!-- Boosted Types Display -->
+
                         </div>
+
                     <!-- Coordinates Section -->
+
                     
                     <div class="col-12">
 
@@ -108,6 +113,47 @@
 
             </div>
 
+            <div class="container">
+
+                <div class="row">
+
+                    <!-- Pokemon Select Section -->
+                    
+                    <div class="col-4">
+
+                        <form>
+                            <div class="form-group">
+                                <label for="pokemonSelect">Choose your Pokemon!</label>
+                                <select class="form-control" id="pokemonSelect">
+                                    <!-- Dynamically create list of released Pokemon here -->
+                                </select>
+                            </div>
+                        </form>
+                        
+                        <button type="button" class="btn btn-primary pokeButton"></button>
+
+                    </div>
+
+                    <div class="col-4">
+
+                        <div id="pokeDisplay"></div>
+
+                        <div id="pokeStats"></div>
+
+
+                    </div>
+
+                    <div class="col-4">
+
+                        <div id="prefWeather"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+    </div>
 
 
     <div class="footer"><p>
