@@ -1,5 +1,6 @@
 var latCoordinate;  //call to try to solve scope issue
 var lonCoordinate;
+var userZip
 
 if (navigator.geolocation) {
   //true
@@ -34,18 +35,27 @@ var x = document.getElementById("geolocation");
               method: "GET"
             }).then(function(response) {
               console.log(response);
+
+              userZip = response.address.postcode;
+              console.log(userZip)
+
             console.log(response.address.city); //successfully shows city
             });
-            varUserCity = response.address.city;   //creating a var of the response to have it appear elsewhere on page.
+
             
           }
 
+          $("#manualZipButton").on("click", function(event){
+            event.preventDefault();
+            userZip = $("#manualZip").val().trim();
+            console.log(userZip)
+          })
+    
+               
 
 
 
 
-
-  
 
 var settings = {
 	"async": true,
