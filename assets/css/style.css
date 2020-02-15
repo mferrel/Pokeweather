@@ -30,5 +30,13 @@ button {
 #typeBox {
     display: flex;
     justify-content: space-between;
+<<<<<<< HEAD
+}
 
+.pokeSprite {
+    height: 200px;
+    width: 200px;
+=======
+
+>>>>>>> 48a0868f2c31e814479e84066fa7f92d4479df8a
 }
