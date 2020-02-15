@@ -1,3 +1,10 @@
+button {
+    background-image: url('../images/pokepin.png');
+    background-size: cover; 
+    font-size: 2rem; 
+                
+}
+
 .footer {
     color: white;
     position: fixed; 
