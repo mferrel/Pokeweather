@@ -1,6 +1,8 @@
 button {
     background-image: url('../images/pokepin.png');
     background-size: cover; 
+    height: auto;
+    width: auto;
     font-size: 2rem; 
                 
 }
