@@ -10,7 +10,7 @@
 </head>
 
 <body>
-
+    <p id="instructions">Welcome to Poke Weather App, a website where we are searching </p>
     <div id="bodyWrapper">
 
             <div class="container">
@@ -50,6 +50,8 @@
                         </form>
                         
                         <button type="button" class="btn btn-primary test"></button>
+                      
+                      <div id="typeBox"></div>
 
                     </div>
 
@@ -61,15 +63,37 @@
 
             <div class="container">
 
-                <div class="row text-center">
+                <div class="row">
 
+<<<<<<< HEAD
                     <!-- Boosted Types Display -->
+=======
+                    <!-- Coordinates Section -->
+>>>>>>> 48a0868f2c31e814479e84066fa7f92d4479df8a
                     
                     <div class="col-12">
 
-                        <div id="typeBox"></div>
+                        <p>Click here to fetch your location!</p>
+
+                        <button onclick="getLocation()">Click Here</button>
+                        
+                        <p id="geolocation"></p>
+                    
+                        <form>
+                            <div class="form-group">
+                                <label type="manualZip">Boosted Type test</label>
+                                <input class="form-control" id="manualZip" placeholder="Enter your Postal Code">
+                               
+
+
+
+                            </div>
+                            <button type="submit" class="btn btn-primary" id="manualZipButton">Submit</button>
+                        </form>
+
 
                     </div>
+
 
                 </div>
 
@@ -118,7 +142,8 @@
     </div>
 
 
-
+    <div class="footer"><p>
+        Project Made by Vince, Marena, and Ben</p></div>
 
 
 
