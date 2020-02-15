@@ -1,8 +1,75 @@
-// var zipCode ='48182'
-// var apiKey = '2023ba5c12854dcdc1d6fbe23996eaaf';
-var userZip = 48182;
+// Automatically detect location/allow for manual location input
 
-var queryURL = "https://api.openweathermap.org/data/2.5/weather?zip="+ userZip + "&appid=2023ba5c12854dcdc1d6fbe23996eaaf";
+var latCoordinate;  //call to try to solve scope issue
+var lonCoordinate;
+var userZip;
+
+if (navigator.geolocation) {
+  //true
+alert ('let\'s find out more about weather and Pokemon?')
+} else {
+  //false
+alert('geolocation not available?! What browser is this?');
+  // prompt for city?
+}
+
+
+
+$( document ).ready(function() {
+                        
+        function getLocation() {
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+          } else { 
+            $("#geolocation").text("Geolocation is not supported by this browser.");
+          }
+        }
+        
+        getLocation();
+
+        function showPosition(position) {
+          $("#geolocation").text("Latitude: " + position.coords.latitude + 
+          "<br>Longitude: " + position.coords.longitude);
+        
+          let latCoordinate = position.coords.latitude;
+          let lonCoordinate = position.coords.longitude;
+       
+          var queryURL = "https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=" + latCoordinate.toFixed(5) + "&lon=" + lonCoordinate.toFixed(5); 
+            $.ajax({
+              url: queryURL,
+              method: "GET"
+            }).then(function(response) {
+              console.log(response);
+
+              userZip = response.address.postcode;
+              console.log(userZip)
+
+            console.log(response.address.city); //successfully shows city
+            getWeather();
+            
+            });
+
+            
+          }
+
+          
+
+     
+        })
+
+$("#manualZipButton").on("click", function(event){
+    event.preventDefault();
+    userZip = $("#manualZip").val().trim();
+    console.log(userZip);
+    getWeather();
+    })
+
+// var userZip = 48182;
+
+// Pulls weather forecast for set location
+
+function getWeather () {
+var weatherQueryURL = "https://api.openweathermap.org/data/2.5/weather?zip="+ userZip + "&appid=2023ba5c12854dcdc1d6fbe23996eaaf";
 // var queryURL = `https://api.openweathermap.org/data/2.5/weather?zip=${zipCode}appid=${apiKEY}`// template literals/strings 
 
 
@@ -25,7 +92,7 @@ var weatherType = {
 
 
 $.ajax({
-    url: queryURL,
+    url: weatherQueryURL,
     method: "GET"
 }).then(function (response) {
     console.log(response);
@@ -109,60 +176,9 @@ $.ajax({
      $("#currentweathercondition").text("The current weather condition is " + response.weather[0].description + ".");
      console.log(response.weather);
 })
+};
 
 
-var latCoordinate;  //call to try to solve scope issue
-var lonCoordinate;
-var userZip
-
-if (navigator.geolocation) {
-  //true
-alert ('let\'s find out more about weather and Pokemon?')
-} else {
-  //false
-alert('geolocation not available?! What browser is this?');
-  // prompt for city?
-}
-
-
-var x = document.getElementById("geolocation");
-                        
-        function getLocation() {
-          if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(showPosition);
-          } else { 
-            x.innerHTML = "Geolocation is not supported by this browser.";
-          }
-        }
-        
-        function showPosition(position) {
-          x.innerHTML = "Latitude: " + position.coords.latitude + 
-          "<br>Longitude: " + position.coords.longitude;
-        
-          let latCoordinate = position.coords.latitude
-          let lonCoordinate = position.coords.longitude
-       
-          var queryURL = "https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=" + latCoordinate.toFixed(5) + "&lon=" + lonCoordinate.toFixed(5); 
-            $.ajax({
-              url: queryURL,
-              method: "GET"
-            }).then(function(response) {
-              console.log(response);
-
-              userZip = response.address.postcode;
-              console.log(userZip)
-
-            console.log(response.address.city); //successfully shows city
-            });
-
-            
-          }
-
-          $("#manualZipButton").on("click", function(event){
-            event.preventDefault();
-            userZip = $("#manualZip").val().trim();
-            console.log(userZip)
-          })
     
                
 
@@ -322,16 +338,6 @@ $(".pokeButton").on("click", function () {
 
 })
 
-// var queryURL = "https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=40.11040&lon=-74.85480"
-
-// $.ajax({
-//     url: queryURL,
-//     method: "GET"
-//   }).then(function(response) {
-
-//     console.log(response);
-  
-//   });
 
 var date = new Date();
 console.log(date);
