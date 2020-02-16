@@ -4,9 +4,11 @@ var latCoordinate;  //call to try to solve scope issue
 var lonCoordinate;
 var userZip;
 
+$("#weatherdiv").hide();
+
 if (navigator.geolocation) {
   //true
-alert ('let\'s find out more about weather and Pokemon?')
+// alert ('let\'s find out more about weather and Pokemon?')
 } else {
   //false
 alert('geolocation not available?! What browser is this?');
@@ -28,9 +30,9 @@ $( document ).ready(function() {
         getLocation();
 
         function showPosition(position) {
-          $("#geolocation").text("Latitude: " + position.coords.latitude + 
-          "<br>Longitude: " + position.coords.longitude);
-        
+          $("#geolocation").html("Latitude: " + Math.round(position.coords.latitude) + 
+          "<br>Longitude: " + Math.round(position.coords.longitude));
+           
           let latCoordinate = position.coords.latitude;
           let lonCoordinate = position.coords.longitude;
        
@@ -62,6 +64,7 @@ $("#manualZipButton").on("click", function(event){
     userZip = $("#manualZip").val().trim();
     console.log(userZip);
     getWeather();
+    $("#weatherdiv").show();
     })
 
 // var userZip = 48182;
@@ -100,16 +103,21 @@ $.ajax({
     console.log('weather api type', weatherApiIdType)
     console.log('clear api type', clearWeatherTypes, sunnyWeatherTypes)
 
+
+    let K = response.main.temp;
+    let temperature =  ((K-273.15)*1.8)+32
+    temperature = Math.round(temperature);
+    console.log(temperature);
+    $("#weathercardtext").html("<h1>" + temperature);
+    
+    
     if (weatherApiIdType === clearWeatherTypes || weatherApiIdType === sunnyWeatherTypes) {
         weatherType.id = weatherApiIdType
         //SHOULD I FIGURE OUT HOW THIS SHOULD SAY SUNNY TOO?
         weatherType.pokemonWeatherType = "Clear"
         weatherBackgroundImg.attr('src', 'assets/images/clear.jpg')
-        currentInGameWeather = 
+      
         console.log('im in clear weather')
-        
-       
-
     }
 
     else if (cloudyWeatherTypes.includes(weatherApiIdType)) {
