@@ -29,7 +29,7 @@ $( document ).ready(function() {
 
         function showPosition(position) {
           $("#geolocation").text("Latitude: " + position.coords.latitude + 
-          "<br>Longitude: " + position.coords.longitude);
+          "   Longitude: " + position.coords.longitude);
         
           let latCoordinate = position.coords.latitude;
           let lonCoordinate = position.coords.longitude;
@@ -47,15 +47,13 @@ $( document ).ready(function() {
             console.log(response.address.city); //successfully shows city
             getWeather();
             
+            document.getElementById("geoCity").innerHTML = response.address.city + ", " + response.address.postcode;
             });
-
-            
+             
           }
-
-          
-
      
         })
+            
 
 $("#manualZipButton").on("click", function(event){
     event.preventDefault();
