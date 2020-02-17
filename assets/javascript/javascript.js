@@ -80,8 +80,6 @@ function getWeather () {
 var weatherQueryURL = "https://api.openweathermap.org/data/2.5/weather?zip="+ userZip + "&appid=2023ba5c12854dcdc1d6fbe23996eaaf";
 // var queryURL = `https://api.openweathermap.org/data/2.5/weather?zip=${zipCode}appid=${apiKEY}`// template literals/strings 
 
-
-var pokemonApiWeatherTypes = ["Clear", "Cloudy", "Fog", "Partly Cloudy", "Rain", "Snow", "Sunny", "Windy"];
 var clearWeatherTypes = 800;
 var cloudyWeatherTypes = [803, 804];
 var fogWeatherTypes = [701, 711, 721, 731, 741, 751, 761, 762];
@@ -95,10 +93,10 @@ let weatherBackgroundImg = $("#weathercard");
 
 var weatherType = {
     id: 0, //numeric id from weather api
-    pokemonWeatherType: '', // assign this based on what category you want it to be a part of,
+    pokemonWeatherType: '', //assign this based on what weather category you want it to be a part of
 }
 
-
+//This is the GET method for the OpenWeather API
 $.ajax({
     url: weatherQueryURL,
     method: "GET"
@@ -108,12 +106,13 @@ $.ajax({
     console.log('weather api type', weatherApiIdType)
     console.log('clear api type', clearWeatherTypes, sunnyWeatherTypes)
 
-
+//This converts the temperature information that the API fetches from Kelvin to Fahrenheit...
     let K = response.main.temp;
     let temperature =  ((K-273.15)*1.8)+32
     temperature = Math.round(temperature);
     console.log(temperature);
-    $("#weathercardtext").html("<h1>" + temperature);
+//...and displays it on the weather card
+    $("#weathercardtext").html("<h1>" + temperature + "°F");
     
     
     if (weatherApiIdType === clearWeatherTypes || weatherApiIdType === sunnyWeatherTypes) {
