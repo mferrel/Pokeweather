@@ -10,7 +10,6 @@
 </head>
 
 <body>
-    <p id="instructions">Welcome to Poke Weather App, a website where we are searching </p>
     <div id="bodyWrapper">
 
         <div class="container">
@@ -19,8 +18,12 @@
 
                 <!-- First section -->
                 <div class="col-12">
-
-                </div>
+                    <div class="card bg-white text-white" style= "max-width: 100%; max-height:100%;">
+                        <img class="logo" src="assets/images/withwhitefillled letters.png" alt="PokeWeather App" id="logo" style= "max-width: 40%; max-height: 40%;">
+                        <div class="card-img-overlay">
+                            
+                        </div>
+                </div> 
 
             </div>
 
@@ -92,6 +95,8 @@
                         <button onclick="getLocation()">Click Here</button>
                         
                         <p id="geolocation"></p>
+
+                        <p id="geoCity"></p>
                     
                         <form>
                             <div class="form-group">
