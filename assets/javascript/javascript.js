@@ -49,21 +49,27 @@ $( document ).ready(function() {
 
             console.log(response.address.city); //successfully shows city
             getWeather();
-            
-            document.getElementById("geoCity").innerHTML = response.address.city + ", " + response.address.postcode;
-            });
+            $("#weatherdiv").show();
+            $("#geolocation").text("Your location is currently set to: " + response.address.city + ", " + userZip);
+
+            })
+            // document.getElementById("geoCity").innerHTML = response.address.city + ", " + response.address.postcode;
+  
              
           }
      
         })
-            
+
+
 
 $("#manualZipButton").on("click", function(event){
     event.preventDefault();
+    $("#geolocation").empty();
     userZip = $("#manualZip").val().trim();
     console.log(userZip);
     getWeather();
     $("#weatherdiv").show();
+    $("#geolocation").text("Your location is currently set to zip code: " + userZip);
     })
 
 // var userZip = 48182;
