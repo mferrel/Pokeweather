@@ -3,6 +3,7 @@
 var latCoordinate;  //call to try to solve scope issue
 var lonCoordinate;
 var userZip;
+var gameWeatherArray = {};
 
 $("#weatherdiv").hide();
 
@@ -188,18 +189,56 @@ $.ajax({
 
      $("#currentweathercondition").text("The current weather condition is " + response.weather[0].description + ".");
      console.log(response.weather);
+
+
+// Calls every in-game weather category and their respective boosted types
+
+var settingsGameWeather = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://pokemon-go1.p.rapidapi.com/weather_boosts.json",
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "pokemon-go1.p.rapidapi.com",
+		"x-rapidapi-key": "137b0a8991mshfe042d583612905p1ff297jsnc05f2d857777"
+	}
+}
+
+$.ajax(settingsGameWeather).done(function (response) {
+    console.log(response);
+
+    // Need to expand here to store weather/type boost pairs and use them in Pokemon select function below
+    $.each(response, function( key, value ) {
+        console.log( key + ": " + value );
+        gameWeatherArray[key] = value;
+      });
+    console.log(gameWeatherArray);
+
+        $("#typeBox").empty();
+        var weather = weatherType.pokemonWeatherType;
+        console.log(weather);
+
+        // Pulls specific boosted types from weather chosen
+        var currentBoost = response[weather];
+        for (i=0; i < currentBoost.length; i++) {
+            console.log("The boosted types are: " + currentBoost[i]);
+            var typeCard = $("<div>");
+            typeCard.addClass("card border-0 typeCard");
+            var typeSymbol = $("<img>");
+            typeSymbol.addClass("card-img-top typeSymbol");
+            typeSymbol.attr("src", "./assets/images/" + currentBoost[i] + ".png");
+            typeCard.append(typeSymbol);
+            var typeTitle = $("<div>");
+            typeTitle.addClass("card-title text-center");
+            typeTitle.text(currentBoost[i]);
+            typeCard.append(typeTitle);
+            $("#typeBox").append(typeCard);
+        }
+});
+
+
 })
 };
-
-
-    
-               
-
-
-
-
-
-var gameWeatherArray = {};
 
 // Calls every in-game weather category and their respective boosted types
 
@@ -246,6 +285,16 @@ $.ajax(settingsGameWeather).done(function (response) {
         }
     })
 });
+    
+               
+
+
+
+
+
+
+
+
 
 
 var settingsSelect = {

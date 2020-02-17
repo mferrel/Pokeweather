@@ -1,6 +1,6 @@
 body {
     background-image: url("../images/pokeballpattern.jpg");
-    background-repeat: repeat;
+    background-repeat: repeat-x;
   }
 
 button {
@@ -20,9 +20,9 @@ button {
     border-radius: 15px;
 }
 
-#weatherdiv {
+/* #weatherdiv {
     padding: 3px;
-}
+} */
 
 #logo {
     background-color: rgba(169, 47, 46, 1);
@@ -35,6 +35,10 @@ button {
     background-color: rgba(169, 47, 46, 1);
 }
 
+#bodyWrapper {
+    padding-bottom: 100px;
+}
+
 .footer {
     color: white;
     position: fixed; 
@@ -44,15 +48,20 @@ button {
     bottom: 0;
     height: 50px;
     text-align: center;
+    margin-top: -50px;
 }
 
 .typeSymbol {
-    height: 100px;
-    width: 100px;
+    height: 75px;
+    width: 75px;
+    background-color: rgba(169, 47, 46, 1);
 }
 
 .typeCard {
     float: left;
+    background-color: rgba(169, 47, 46, 1);
+    margin: auto;
+    vertical-align: middle;
 }
 
 #typeBox {
@@ -63,5 +72,10 @@ button {
 .pokeSprite {
     height: 200px;
     width: 200px;
+    margin: auto;
+    display: block;
+}
 
+#pokeDisplay {
+    margin: auto;
 }
