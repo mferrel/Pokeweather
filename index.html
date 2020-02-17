@@ -18,8 +18,8 @@
 
                 <!-- First section -->
                 <div class="col-12">
-                    <div class="card bg-white text-white" style= "max-width: 100%; max-height:100%;">
-                        <img class="logo" src="assets/images/withwhitefillled letters.png" alt="PokeWeather App" id="logo" style= "max-width: 40%; max-height: 40%;">
+                    <div class="card bg-none text-white logoBackground" style= "max-width: 100%; max-height:100%;">
+                        <img class="logo text-center" src="assets/images/withwhitefillled letters.png" alt="PokeWeather App" id="logo" style= "max-width: 40%; max-height: 40%;">
                         <div class="card-img-overlay">
                             
                         </div>
@@ -28,7 +28,51 @@
             </div>
 
         </div>
+        </div>
 
+            <!-- Coordinates/location Section -->
+            <div class="container">
+
+                <div class="row">
+            
+            <div class="col-6">
+
+                <p>Your Current Location Is:</p>
+
+                <button onclick="getLocation()">Click Here</button>
+                
+                <p id="geolocation"></p>
+
+                <p id="geoCity"></p>
+            
+            </div>
+
+            <div class="col-6">
+
+                <form>
+                    <div class="form-group">
+                        <label type="manualZip">Zip Code</label>
+                        <input class="form-control" id="manualZip" placeholder="Enter your Postal Code">
+                        
+
+
+
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="manualZipButton">Submit</button>
+                </form>
+
+            </div>
+
+            </div>
+
+
+        </div>
+
+
+
+    <!-- End Coordinates/location Section -->
+       
+       <!-- Weather Card Container-->
         <div class="container">
 
                     
@@ -48,21 +92,24 @@
                     </div>
 
         
+        </div>
+        </div>            
 
-                    
+        </div>
+        <!-- End Weather Card Container -->
 
-                </div>
 
+        <!-- In-game Weather Form-->
                 <div class="container">
 
                     <div class="row">
 
                         <!-- Third section -->
-                        <div class="col-12">
+                        <div class="col-4">
 
                             <form>
                                 <div class="form-group">
-                                    <label for="boostedTest">Boosted Type test</label>
+                                    <label for="boostedTest">Manually select an in-game weather condition to see boosted Pokemon types.</label>
                                     <select class="form-control" id="boostedTest">
                                         <option>Clear</option>
                                         <option>Cloudy</option>
@@ -78,57 +125,35 @@
                             
                             <button type="button" class="btn btn-primary test"></button>
                           
-                          <div id="typeBox"></div>
+                          
 
 
                     <!-- Boosted Types Display -->
 
                         </div>
 
-                    <!-- Coordinates Section -->
+                        <div class="col-4" id="typeBox"></div>
 
-                    
-                    <div class="col-12">
+                        <div class="col-4">Information about how in-game weather affects pokemon spawns/moves in here.</div>
 
-                        <p>Click here to fetch your location!</p>
+                        </div>
+                        </div>
 
-                        <button onclick="getLocation()">Click Here</button>
-                        
-                        <p id="geolocation"></p>
+        <!-- end In-game Weather Form-->
+        
 
-                        <p id="geoCity"></p>
-                    
-                        <form>
-                            <div class="form-group">
-                                <label type="manualZip">Boosted Type test</label>
-                                <input class="form-control" id="manualZip" placeholder="Enter your Postal Code">
-                               
-
-
-
-                            </div>
-                            <button type="submit" class="btn btn-primary" id="manualZipButton">Submit</button>
-                        </form>
-
-
-                    </div>
-
-
-                </div>
-
-            </div>
-
+            
+            <!-- Pokemon Select Section -->
             <div class="container">
 
                 <div class="row">
 
-                    <!-- Pokemon Select Section -->
                     
                     <div class="col-4">
 
                         <form>
                             <div class="form-group">
-                                <label for="pokemonSelect">Choose your Pokemon!</label>
+                                <label for="pokemonSelect">Choose a Pokemon to see its types and what weather it prefers!</label>
                                 <select class="form-control" id="pokemonSelect">
                                     <!-- Dynamically create list of released Pokemon here -->
                                 </select>
@@ -158,13 +183,15 @@
 
             </div>
 
-    </div>
+            <!-- End Pokemon Select Section -->
+
+   
 
 
     <div class="footer"><p>
-        Project Made by Vince, Marena, and Ben</p></div>
+        Project Made by Vince, Marena, and Ben.</p></div>
 
-
+        <!-- Pokeball background pattern by: Lohvyniuk -->
 
             <!-- Script Reference -->
 
