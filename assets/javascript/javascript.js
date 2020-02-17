@@ -7,6 +7,11 @@ var gameWeatherArray = {};
 
 $("#weatherdiv").hide();
 
+var date = new Date();
+console.log(date);
+var currentHour = date.getHours();
+console.log(currentHour);
+
 if (navigator.geolocation) {
   //true
 // alert ('let\'s find out more about weather and Pokemon?')
@@ -32,8 +37,8 @@ $( document ).ready(function() {
 
         function showPosition(position) {
 
-          $("#geolocation").html("Latitude: " + Math.round(position.coords.latitude) + 
-          "<br>Longitude: " + Math.round(position.coords.longitude));
+        //   $("#geolocation").html("Latitude: " + Math.round(position.coords.latitude) + 
+        //   "<br>Longitude: " + Math.round(position.coords.longitude));
 
           let latCoordinate = position.coords.latitude;
           let lonCoordinate = position.coords.longitude;
@@ -190,6 +195,22 @@ $.ajax({
      $("#currentweathercondition").text("The current weather condition is " + response.weather[0].description + ".");
      console.log(response.weather);
 
+    //  var gameWeatherIcon = $("<img>");
+    //  gameWeatherIcon.addClass("gameWeatherIcon");
+    //  var gameWeatherStatus = "The current in-game weather is most likely " + weatherType.pokemonWeatherType.toLowerCase(); + "."
+    //  if (weatherType.pokemonWeatherType == "Clear" && currentHour > 6 && currentHour < 19) {
+    //      gameWeatherIcon.attr('src', './assets/images/clearGameDay.png')
+    //     } else if (weatherType.pokemonWeatherType == "Clear") {
+    //     gameWeatherIcon.attr('src', './assets/images/clearGameNight.png')
+    //     } else if (weatherType.pokemonWeatherType == "Clear") {
+    //         gameWeatherIcon.attr('src', './assets/images/clearGameNight.png')
+    //         }
+    //         else if (weatherType.pokemonWeatherType == "Clear") {
+    //             gameWeatherIcon.attr('src', './assets/images/clearGameNight.png')
+    //             } 
+    //     $("#currentGameWeather").append(gameWeatherIcon);
+    //     $("#currentGameWeather").append(gameWeatherStatus);
+
 
 // Calls every in-game weather category and their respective boosted types
 
@@ -263,6 +284,7 @@ $.ajax(settingsGameWeather).done(function (response) {
       });
     console.log(gameWeatherArray);
     $(".test").on("click", function() {
+        event.preventDefault();
         $("#typeBox").empty();
         var weather = $("#boostedTest option:selected").text();
         console.log(weather);
@@ -324,6 +346,7 @@ $.ajax(settingsSelect).done(function (response) {
 });
 
 $(".pokeButton").on("click", function () {
+    event.preventDefault();
     $("#pokeDisplay").empty();
     $("#pokeStats").empty();
     $("#prefWeather").empty();
@@ -401,6 +424,4 @@ $(".pokeButton").on("click", function () {
 })
 
 
-var date = new Date();
-console.log(date);
-console.log(date.getHours());
+
