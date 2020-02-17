@@ -1,10 +1,13 @@
 body {
     background-image: url("../images/pokeballpattern.jpg");
 
+    font-size: 18px;
+
     background-repeat: repeat-x;
 
     font-family: 'futura', 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif; /*futura and gill Sans appear to be most accurate gameboy fonts*/
     /* color:rgba(rgba(145, 249, 1, 0.845));  we have our text color defined in html not here*/
+
   }
 
 button {
@@ -24,9 +27,15 @@ button {
     border-radius: 15px;
 }
 
-/* #weatherdiv {
-    padding: 3px;
-} */
+
+#weatherdiv {
+    border-color: rgba(169, 47, 46, 1);
+
+}
+#currentweathercondition {
+    font-size: 25px;
+}
+
 
 #logo {
     background-color: rgba(169, 47, 46, 1);
@@ -80,6 +89,8 @@ button {
     display: block;
 }
 
+
 #pokeDisplay {
     margin: auto;
 }
+
