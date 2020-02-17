@@ -1,3 +1,8 @@
+body {
+    background-image: url("../images/pokeballpattern.jpg");
+    background-repeat: repeat;
+  }
+
 button {
     background-image: url('../images/pokepin.png');
     background-size: cover; 
@@ -7,12 +12,33 @@ button {
                 
 }
 
+.row {
+    background-color: rgba(169, 47, 46, 1);
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+    border-radius: 15px;
+}
 
+#weatherdiv {
+    padding: 3px;
+}
+
+#logo {
+    background-color: rgba(169, 47, 46, 1);
+    margin: auto;
+    width: 90%;
+    padding: 10px;
+}
+
+.logoBackground {
+    background-color: rgba(169, 47, 46, 1);
+}
 
 .footer {
     color: white;
     position: fixed; 
-    background: red;
+    background-color: rgba(169, 47, 46, 1);
     left: 0;
     right: 0;
     bottom: 0;
