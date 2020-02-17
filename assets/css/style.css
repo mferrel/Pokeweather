@@ -1,8 +1,13 @@
 body {
     background-image: url("../images/pokeballpattern.jpg");
-    background-repeat: repeat;
-    font-family: 'Lato', sans-serif;
+
     font-size: 18px;
+
+    background-repeat: repeat-x;
+
+    font-family: 'futura', 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif; /*futura and gill Sans appear to be most accurate gameboy fonts*/
+    /* color:rgba(rgba(145, 249, 1, 0.845));  we have our text color defined in html not here*/
+
   }
 
 button {
@@ -22,6 +27,7 @@ button {
     border-radius: 15px;
 }
 
+
 #weatherdiv {
     border-color: rgba(169, 47, 46, 1);
 
@@ -29,6 +35,7 @@ button {
 #currentweathercondition {
     font-size: 25px;
 }
+
 
 #logo {
     background-color: rgba(169, 47, 46, 1);
@@ -41,6 +48,10 @@ button {
     background-color: rgba(169, 47, 46, 1);
 }
 
+#bodyWrapper {
+    padding-bottom: 100px;
+}
+
 .footer {
     color: white;
     position: fixed; 
@@ -50,15 +61,20 @@ button {
     bottom: 0;
     height: 50px;
     text-align: center;
+    margin-top: -50px;
 }
 
 .typeSymbol {
-    height: 100px;
-    width: 100px;
+    height: 75px;
+    width: 75px;
+    background-color: rgba(169, 47, 46, 1);
 }
 
 .typeCard {
     float: left;
+    background-color: rgba(169, 47, 46, 1);
+    margin: auto;
+    vertical-align: middle;
 }
 
 #typeBox {
@@ -69,5 +85,12 @@ button {
 .pokeSprite {
     height: 200px;
     width: 200px;
-
+    margin: auto;
+    display: block;
 }
+
+
+#pokeDisplay {
+    margin: auto;
+}
+
