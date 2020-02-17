@@ -108,6 +108,7 @@ $.ajax({
     var weatherApiIdType = response.weather[0].id;
     console.log('weather api type', weatherApiIdType)
     console.log('clear api type', clearWeatherTypes, sunnyWeatherTypes)
+    console.log(response.name)
 
 
     let K = response.main.temp;
