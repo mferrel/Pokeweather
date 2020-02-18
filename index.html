@@ -25,14 +25,17 @@
             <!-- Coordinates/location Section -->
             <div class="container">
                 <div class="row">
-            <div class="col-6">
+            <div class="col-6 mt-2">
+                <div class="pokedex">
                 <form>
                 <!-- <button onclick="getLocation()">Click Here</button> no longer using this button -->
                 <p id="geolocation"></p>
                 <p id="geoCity"></p>
                 </form>
+                </div>
             </div>
-            <div class="col-6">
+            <div class="col-6 mt-2">
+                <div class="pokedex">
                 <form>
                     <div class="form-group">
                         <label class="manualZip">Zip Code</label>
@@ -42,13 +45,14 @@
                 </form>
             </div>
             </div>
+            </div>
         </div>
     <!-- End Coordinates/location Section -->
        <!-- Weather Card Container-->
         <div class="container">
-            <div class="row">
+            <div class="row weatherRow">
                 <!-- Real Life weather -->
-                <div class="col-6">
+                <div class="col-6 p-3">
                     <div class="card bg-dark text-white" id="weatherdiv" style= "max-width: 28rem; max-height: 22rem;">
                         <img class="card-img" src="" alt="Card image" id="weathercard">
                         <div class="card-img-overlay">
@@ -59,10 +63,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-6">
+                <div class="col-6 mt-4">
+                    <div class="pokedex">
                     <div class="card" id="gameWeatherCard">
-                        <h5 class="card-title">In-Game Weather</h5>
+                        <h4 class="card-title text-center">In-Game Weather</h4>
                             <div id="currentGameWeather"></div>
+                    </div>
                     </div>
                 </div>
 
@@ -74,8 +80,9 @@
                 <div class="container">
                     <div class="row">
                         <!-- Third section -->
-                        <div class="col-4">
-                            <form class="form">
+                        <div class="col-4 mt-2">
+                            <div class="pokedex">
+                            <form class="align-middle">
                                 <div class="form-group">
                                     <label for="boostedTest" class="mr-2">Select in-game weather.</label>
                                     <select class="form-control" id="boostedTest">
@@ -91,18 +98,24 @@
                                 </div>
                                 <button type="submit" class="btn btn-link test"></button>
                             </form>
+                        </div>
                     <!-- Boosted Types Display -->
                         </div>
-                        <div class="col-4" id="typeBox"></div>
-                        <div class="col-4">Information about how in-game weather affects pokemon spawns/moves in here.</div>
+                        <div class="col-4 mt-3" id="typeBox"></div>
+                        
+                        <div class="col-4 mt-2">
+                            <div class="pokedex">Information about how in-game weather affects pokemon spawns/moves in here.</div>
+                        </div>
+         
                         </div>
                         </div>
         <!-- end In-game Weather Form -->
             <!-- Pokemon Select Section -->
             <div class="container">
                 <div class="row">
-                    <div class="col-4">
-                        <form class="form">
+                    <div class="col-4 mt-2">
+                        <div class="pokedex">
+                        <form class="align-middle">
                             <div class="form-group">
                                 <label class="mr-2" for="pokemonSelect">Choose a Pokemon!</label>
                                 <select class="form-control" id="pokemonSelect">
@@ -112,12 +125,17 @@
                             <button type="button" class="btn btn-link pokeButton"></button>
                         </form>
                     </div>
-                    <div class="col-4">
+                    </div>
+                    <div class="col-4 mt-2">
+                        <div class="pokedex">
                         <div id="pokeDisplay"></div>
+                        </div>
                         <div id="pokeStats"></div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-4 mt-2">
+                        <div class="pokedex">
                         <div id="prefWeather"></div>
+                    </div>
                     </div>
                 </div>
             </div>

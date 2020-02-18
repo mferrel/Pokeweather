@@ -195,21 +195,29 @@ $.ajax({
      $("#currentweathercondition").text("The current weather condition is " + response.weather[0].description + ".");
      console.log(response.weather);
 
-    //  var gameWeatherIcon = $("<img>");
-    //  gameWeatherIcon.addClass("gameWeatherIcon");
-    //  var gameWeatherStatus = "The current in-game weather is most likely " + weatherType.pokemonWeatherType.toLowerCase(); + "."
-    //  if (weatherType.pokemonWeatherType == "Clear" && currentHour > 6 && currentHour < 19) {
-    //      gameWeatherIcon.attr('src', './assets/images/clearGameDay.png')
-    //     } else if (weatherType.pokemonWeatherType == "Clear") {
-    //     gameWeatherIcon.attr('src', './assets/images/clearGameNight.png')
-    //     } else if (weatherType.pokemonWeatherType == "Clear") {
-    //         gameWeatherIcon.attr('src', './assets/images/clearGameNight.png')
-    //         }
-    //         else if (weatherType.pokemonWeatherType == "Clear") {
-    //             gameWeatherIcon.attr('src', './assets/images/clearGameNight.png')
-    //             } 
-    //     $("#currentGameWeather").append(gameWeatherIcon);
-    //     $("#currentGameWeather").append(gameWeatherStatus);
+     var gameWeatherIcon = $("<img>");
+     gameWeatherIcon.addClass("gameWeatherIcon");
+     var gameWeatherStatus = "The current in-game weather is " + weatherType.pokemonWeatherType.toLowerCase(); + "."
+     if ((weatherType.pokemonWeatherType == "Clear" || weatherType.pokemonWeatherType == "Sunny") && currentHour > 6 && currentHour < 19) {
+         gameWeatherIcon.attr('src', './assets/images/clearGameDay.png')
+        } else if (weatherType.pokemonWeatherType == "Clear") {
+        gameWeatherIcon.attr('src', './assets/images/clearGameNight.png')
+        } else if (weatherType.pokemonWeatherType == "Fog") {
+            gameWeatherIcon.attr('src', './assets/images/fogGame.png')
+            }
+            else if (weatherType.pokemonWeatherType == "Partly Cloudy" && currentHour > 6 && currentHour < 19) {
+                gameWeatherIcon.attr('src', './assets/images/cloudyGameDay.png')
+                } else if (weatherType.pokemonWeatherType == "Partly Cloudy") {
+                    gameWeatherIcon.attr('src', './assets/images/cloudyGameNight.png')
+                    } else if (weatherType.pokemonWeatherType == "Rain") {
+                        gameWeatherIcon.attr('src', './assets/images/rainGame.png')
+                        } else if (weatherType.pokemonWeatherType == "Snow") {
+                            gameWeatherIcon.attr('src', './assets/images/snowGame.png')
+                            } else if (weatherType.pokemonWeatherType == "Windy") {
+                                gameWeatherIcon.attr('src', './assets/images/windyGame.png')
+                                }
+        $("#currentGameWeather").append(gameWeatherIcon);
+        $("#currentGameWeather").append(gameWeatherStatus);
 
 
 // Calls every in-game weather category and their respective boosted types
