@@ -5,6 +5,31 @@ body {
     font-family: 'futura', 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif; /*futura and gill Sans appear to be most accurate gameboy fonts*/
     /* color:rgba(rgba(145, 249, 1, 0.845));  we have our text color defined in html not here*/
   }
+
+
+  .fakeHolder {
+    display: flex;
+    justify-content: space-between;
+}
+
+.fakeStuffGlow {
+    height: 30%;
+    width: 30%;
+    margin: auto;
+    float: left;
+    vertical-align: middle;
+    filter: drop-shadow(0 0 0.75rem #91F8F8);
+}
+
+.fakeStuff {
+    height: 20px;
+    width: 20px;
+    margin: auto;
+    margin-top: 20px;
+    float: left;
+    vertical-align: middle;
+}
+
 .pokedex {
     /* sets up the horizontal layout */
     display:flex;
@@ -29,6 +54,7 @@ body {
     width: 95%;
     border: none;
     text-align: center;
+    max-height: 100px;
   }
 
   .gameWeatherIcon {
@@ -39,6 +65,9 @@ body {
 
   form {
       display: flex;
+      margin: auto;
+      width: 95%;
+
   }
 
   input {
