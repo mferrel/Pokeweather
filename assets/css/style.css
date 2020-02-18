@@ -119,6 +119,8 @@ button {
 #currentweathercondition {
     font-size: 25px;
 }
+
+
 #logo {
     background-color: rgba(169, 47, 46, 1);
     margin: auto;
@@ -128,9 +130,11 @@ button {
 .logoBackground {
     background-color: rgba(169, 47, 46, 1);
 }
+
 #bodyWrapper {
     padding-bottom: 100px;
 }
+
 .footer {
     color: white;
     position: fixed; 
@@ -163,10 +167,18 @@ button {
     margin: auto;
     display: block;
 }
+
+#pokeDisplay {
+    margin: auto;
+}
 #pokeDisplay {
     margin: auto;
 }
 
 .weatherRow {
     min-height: 200px;
+}
+
+.hide{
+    display: none;
 }

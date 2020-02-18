@@ -121,7 +121,8 @@ $.ajax({
 //...and displays it on the weather card
     $("#weathercardtext").html("<h1>" + temperature + "°F");
     
-    
+    weatherBackgroundImg.removeClass("hide");
+
     if (weatherApiIdType === clearWeatherTypes || weatherApiIdType === sunnyWeatherTypes) {
         weatherType.id = weatherApiIdType
         //SHOULD I FIGURE OUT HOW THIS SHOULD SAY SUNNY TOO?
