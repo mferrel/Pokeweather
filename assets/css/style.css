@@ -1,24 +1,81 @@
 body {
     background-image: url("../images/pokeballpattern.jpg");
-
     font-size: 18px;
-
     background-repeat: repeat-x;
-
     font-family: 'futura', 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif; /*futura and gill Sans appear to be most accurate gameboy fonts*/
     /* color:rgba(rgba(145, 249, 1, 0.845));  we have our text color defined in html not here*/
-
+  }
+.pokedex {
+    /* sets up the horizontal layout */
+    display:flex;
+    flex-direction:row;
+    /* box around it */
+    border:1px solid #475848;
+    /*edges of the elements. */
+    padding: 2px;
+    border-radius: 12px;
+    margin: auto;
+    background: #01B600;
+    width: 90%;
+    height: 90%;
+    border: 3px solid rgba(135, 148, 167, 0.947);
+    color: black;
+    vertical-align: middle;
   }
 
+  #gameWeatherCard {
+    background: #01B600;
+    margin: auto;
+    width: 95%;
+    border: none;
+    text-align: center;
+  }
+
+  .gameWeatherIcon {
+      display: block;
+      margin: auto;
+      width: 70px;
+  }
+
+  form {
+      display: flex;
+  }
+
+  input {
+    /* Tell the input to use all the available space */
+    flex-grow:1;
+    /* And hide the input's outline, so the form looks like the outline */
+    border:none;
+  }
+  input:focus {
+    /* removing the input focus blue box. Put this on the form if you like. */
+    outline: none;
+  }
 button {
     background-image: url('../images/pokepin.png');
-    background-size: cover; 
-    height: auto;
-    width: auto;
-    font-size: 1rem; 
-                
+    background-size: auto; 
+    height: 50px;
+    width: 50px;
+    background-repeat: no-repeat;
+    font-size: .5rem; 
+    margin-left: 3px;
 }
 
+#boostedTest {
+    padding: 5px;
+}
+
+.test {
+    margin-top: 30px;
+}
+
+#manualZipButton {
+    margin-top: 30px;
+}
+
+.pokeButton {
+    margin-top: 30px;
+}
 .row {
     background-color: rgba(169, 47, 46, 1);
     border-style: solid;
@@ -26,32 +83,24 @@ button {
     border-width: 2px;
     border-radius: 15px;
 }
-
-
 #weatherdiv {
     border-color: rgba(169, 47, 46, 1);
-
 }
 #currentweathercondition {
     font-size: 25px;
 }
-
-
 #logo {
     background-color: rgba(169, 47, 46, 1);
     margin: auto;
     width: 90%;
     padding: 10px;
 }
-
 .logoBackground {
     background-color: rgba(169, 47, 46, 1);
 }
-
 #bodyWrapper {
     padding-bottom: 100px;
 }
-
 .footer {
     color: white;
     position: fixed; 
@@ -63,34 +112,31 @@ button {
     text-align: center;
     margin-top: -50px;
 }
-
 .typeSymbol {
     height: 75px;
     width: 75px;
     background-color: rgba(169, 47, 46, 1);
 }
-
 .typeCard {
     float: left;
     background-color: rgba(169, 47, 46, 1);
     margin: auto;
     vertical-align: middle;
 }
-
 #typeBox {
     display: flex;
     justify-content: space-between;
 }
-
 .pokeSprite {
     height: 200px;
     width: 200px;
     margin: auto;
     display: block;
 }
-
-
 #pokeDisplay {
     margin: auto;
 }
 
+.weatherRow {
+    min-height: 200px;
+}

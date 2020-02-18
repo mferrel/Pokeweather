@@ -1,87 +1,58 @@
 <!DOCTYPE html>
 <html lang="en-us">
-
 <head>
     <meta charset="UTF-8">
     <Title>The PokeWeather API</Title>
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <link href=“https://fonts.googleapis.com/css?family=Lato&display=swap” rel=“stylesheet”>
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
 </head>
-
 <body>
     <div id="bodyWrapper">
-
         <div class="container">
-
             <div class="row">
-
                 <!-- First section -->
                 <div class="col-12">
                     <div class="card bg-none text-white logoBackground" style= "max-width: 100%; max-height:100%;">
                         <img class="logo text-center" src="assets/images/withwhitefillled letters.png" alt="PokeWeather App" id="logo" style= "max-width: 40%; max-height: 40%;">
                         <div class="card-img-overlay">
-                            
                         </div>
                 </div> 
-
             </div>
-
         </div>
         </div>
-
             <!-- Coordinates/location Section -->
             <div class="container">
-
                 <div class="row">
-            
-            <div class="col-6">
-
-                <p>Your Current Location Is:</p>
-
-                <button onclick="getLocation()">Click Here</button>
-                
+            <div class="col-6 mt-2">
+                <div class="pokedex">
+                <form>
+                <!-- <button onclick="getLocation()">Click Here</button> no longer using this button -->
                 <p id="geolocation"></p>
-
                 <p id="geoCity"></p>
-            
+                </form>
+                </div>
             </div>
-
-            <div class="col-6">
-
+            <div class="col-6 mt-2">
+                <div class="pokedex">
                 <form>
                     <div class="form-group">
-                        <label type="manualZip">Zip Code</label>
-                        <input class="form-control" id="manualZip" placeholder="Enter your Postal Code">
-                        
-
-
-
+                        <label class="manualZip">Zip Code</label>
+                        <input class="form-control" id="manualZip" placeholder="Enter your Postal Code"> 
                     </div>
-                    <button type="submit" class="btn btn-primary" id="manualZipButton">Submit</button>
+                    <button type="submit" class="btn btn-link" id="manualZipButton"> </button> <!-- change btn primary-->
                 </form>
-
             </div>
-
             </div>
-
-
+            </div>
         </div>
-
-
-
     <!-- End Coordinates/location Section -->
-       
        <!-- Weather Card Container-->
         <div class="container">
-
-                    
-            <div class="row">
-
-                <!-- Second section -->
-               
-                <div class="col-12">
+            <div class="row weatherRow">
+                <!-- Real Life weather -->
+                <div class="col-6 p-3">
                     <div class="card bg-dark text-white" id="weatherdiv" style= "max-width: 28rem; max-height: 22rem;">
                         <img class="card-img" src="" alt="Card image" id="weathercard">
                         <div class="card-img-overlay">
@@ -91,26 +62,29 @@
                             <p class="card-text" id="weathercardtext"></p>
                         </div>
                     </div>
+                </div>
+                <div class="col-6 mt-4">
+                    <div class="pokedex">
+                    <div class="card" id="gameWeatherCard">
+                        <h4 class="card-title text-center">In-Game Weather</h4>
+                            <div id="currentGameWeather"></div>
+                    </div>
+                    </div>
+                </div>
 
-        
-        </div>
+
         </div>            
-
         </div>
         <!-- End Weather Card Container -->
-
-
         <!-- In-game Weather Form-->
                 <div class="container">
-
                     <div class="row">
-
                         <!-- Third section -->
-                        <div class="col-4">
-
-                            <form>
+                        <div class="col-4 mt-2">
+                            <div class="pokedex">
+                            <form class="align-middle">
                                 <div class="form-group">
-                                    <label for="boostedTest">Manually select an in-game weather condition to see boosted Pokemon types.</label>
+                                    <label for="boostedTest" class="mr-2">Select in-game weather.</label>
                                     <select class="form-control" id="boostedTest">
                                         <option>Clear</option>
                                         <option>Cloudy</option>
@@ -122,84 +96,56 @@
                                         <option>Wind</option>
                                     </select>
                                 </div>
+                                <button type="submit" class="btn btn-link test"></button>
                             </form>
-                            
-                            <button type="button" class="btn btn-primary test"></button>
-                          
-                          
-
-
+                        </div>
                     <!-- Boosted Types Display -->
-
                         </div>
-
-                        <div class="col-4" id="typeBox"></div>
-
-                        <div class="col-4">Information about how in-game weather affects pokemon spawns/moves in here.</div>
-
+                        <div class="col-4 mt-3" id="typeBox"></div>
+                        
+                        <div class="col-4 mt-2">
+                            <div class="pokedex">Information about how in-game weather affects pokemon spawns/moves in here.</div>
+                        </div>
+         
                         </div>
                         </div>
-
-        <!-- end In-game Weather Form-->
-        
-
-            
+        <!-- end In-game Weather Form -->
             <!-- Pokemon Select Section -->
             <div class="container">
-
                 <div class="row">
-
-                    
-                    <div class="col-4">
-
-                        <form>
+                    <div class="col-4 mt-2">
+                        <div class="pokedex">
+                        <form class="align-middle">
                             <div class="form-group">
-                                <label for="pokemonSelect">Choose a Pokemon to see its types and what weather it prefers!</label>
+                                <label class="mr-2" for="pokemonSelect">Choose a Pokemon!</label>
                                 <select class="form-control" id="pokemonSelect">
                                     <!-- Dynamically create list of released Pokemon here -->
                                 </select>
                             </div>
+                            <button type="button" class="btn btn-link pokeButton"></button>
                         </form>
-                        
-                        <button type="button" class="btn btn-primary pokeButton"></button>
-
                     </div>
-
-                    <div class="col-4">
-
+                    </div>
+                    <div class="col-4 mt-2">
+                        <div class="pokedex">
                         <div id="pokeDisplay"></div>
-
+                        </div>
                         <div id="pokeStats"></div>
-
-
                     </div>
-
-                    <div class="col-4">
-
+                    <div class="col-4 mt-2">
+                        <div class="pokedex">
                         <div id="prefWeather"></div>
-
                     </div>
-
+                    </div>
                 </div>
-
             </div>
-
             <!-- End Pokemon Select Section -->
-
-   
         </div>
-
     <div class="footer"><p>
         Project Made by Vince, Marena, and Ben.</p></div>
-
         <!-- Pokeball background pattern by: Lohvyniuk -->
-
             <!-- Script Reference -->
-
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
             <script src="assets/javascript/javascript.js"></script>
-
 </body>
-
 </html>
