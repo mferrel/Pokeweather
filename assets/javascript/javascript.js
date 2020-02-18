@@ -194,7 +194,7 @@ $.ajax({
 
      $("#currentweathercondition").text("The current weather condition is " + response.weather[0].description + ".");
      console.log(response.weather);
-
+     $("#currentGameWeather").empty();
      var gameWeatherIcon = $("<img>");
      gameWeatherIcon.addClass("gameWeatherIcon");
      var gameWeatherStatus = "The current in-game weather is " + weatherType.pokemonWeatherType.toLowerCase(); + "."
@@ -394,9 +394,9 @@ $(".pokeButton").on("click", function () {
                 console.log(currentPoke + " is a " + response[k].type + " type.");
                 var typeArray = determinePoke.type;
                 if (typeArray.length > 1) {
-                    $("#pokeStats").html("<h4>" + currentPoke + " is a " + response[k].type[0] + " / " + determinePoke.type[1]+ " type.</h4>")
+                    $("#prefWeather").append("<h4>" + currentPoke + " is a " + response[k].type[0] + " / " + determinePoke.type[1]+ " type.</h4>")
                 } else {
-                $("#pokeStats").html("<h4>" + currentPoke + " is a " + response[k].type + " type.</h4>") }
+                    $("#prefWeather").append("<h4>" + currentPoke + " is a " + response[k].type + " type.</h4>") }
                 k = 1019;
             } else {
                 console.log(currentPoke);
