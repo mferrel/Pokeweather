@@ -215,7 +215,9 @@ $.ajax({
                             gameWeatherIcon.attr('src', './assets/images/snowGame.png')
                             } else if (weatherType.pokemonWeatherType == "Windy") {
                                 gameWeatherIcon.attr('src', './assets/images/windyGame.png')
-                                }
+                                } else if (weatherType.pokemonWeatherType == "Cloudy") {
+                                    gameWeatherIcon.attr('src', './assets/images/cloudyGame.png')
+                                    }
         $("#currentGameWeather").append(gameWeatherIcon);
         $("#currentGameWeather").append(gameWeatherStatus);
 
