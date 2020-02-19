@@ -146,7 +146,7 @@ $.ajax({
         console.log('weatherApiIdType', weatherApiIdType)
         weatherType.id = weatherApiIdType
         weatherType.pokemonWeatherType = "Fog"
-        weatherBackgroundImg.attr('src', 'assets/images/fog.jpg')
+        weatherBackgroundImg.attr('src', 'assets/images/foggy.jpg')
     }
 
     else if (partlyCloudyWeatherTypes.includes(weatherApiIdType)) {
