@@ -228,7 +228,7 @@ $.ajax({
 var settingsGameWeather = {
 	"async": true,
 	"crossDomain": true,
-	"url": "https://pokemon-go1.p.rapidapi.com/weather_boosts.json",
+	"url": "https://cors-anywhere.herokuapp.com/https://pokemon-go1.p.rapidapi.com/weather_boosts.json",
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "pokemon-go1.p.rapidapi.com",
@@ -277,7 +277,7 @@ $.ajax(settingsGameWeather).done(function (response) {
 var settingsGameWeather = {
 	"async": true,
 	"crossDomain": true,
-	"url": "https://pokemon-go1.p.rapidapi.com/weather_boosts.json",
+	"url": "https://cors-anywhere.herokuapp.com/https://pokemon-go1.p.rapidapi.com/weather_boosts.json",
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "pokemon-go1.p.rapidapi.com",
@@ -333,7 +333,7 @@ $.ajax(settingsGameWeather).done(function (response) {
 var settingsSelect = {
 	"async": true,
 	"crossDomain": true,
-	"url": "https://pokemon-go1.p.rapidapi.com/released_pokemon.json",
+	"url": "https://cors-anywhere.herokuapp.com/https://pokemon-go1.p.rapidapi.com/released_pokemon.json",
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "pokemon-go1.p.rapidapi.com",
@@ -381,7 +381,7 @@ $(".pokeButton").on("click", function () {
     var settingsSelectType = {
         "async": true,
         "crossDomain": true,
-        "url": "https://pokemon-go1.p.rapidapi.com/pokemon_types.json",
+        "url": "https://cors-anywhere.herokuapp.com/https://pokemon-go1.p.rapidapi.com/pokemon_types.json",
         "method": "GET",
         "headers": {
             "x-rapidapi-host": "pokemon-go1.p.rapidapi.com",
